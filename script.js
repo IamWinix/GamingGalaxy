@@ -68,3 +68,8 @@ musicRange.addEventListener('input', function() {
   const volume = parseFloat(musicRange.value);
   backgroundMusic.volume = volume;
 });
+
+// Hide music when interact button is clicked
+interactButton.addEventListener('click', function() {
+  backgroundMusic.style.display = 'none';
+});
