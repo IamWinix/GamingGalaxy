@@ -1,20 +1,21 @@
 const player = document.getElementById('player');
+const goal = document.getElementById('goal');
 const interactButton = document.getElementById('interact-button');
 const backgroundMusic = document.getElementById('background-music');
 
-let currentStage = 1;
+let playerPosition = 0;
 
 function startGame() {
   interactButton.style.display = 'none';
   player.style.display = 'block';
   backgroundMusic.play();
-  
-  loadStage(currentStage);
+
+  loadStage(1);
 }
 
 function loadStage(stage) {
   clearStage();
-  
+
   switch (stage) {
     case 1:
       // Code to set up and display Stage 1
@@ -25,7 +26,7 @@ function loadStage(stage) {
       player.style.backgroundColor = 'green';
       break;
     // Add more cases for additional stages
-    
+
     default:
       console.log("Invalid stage number");
   }
@@ -37,8 +38,18 @@ function clearStage() {
 
 document.addEventListener('keydown', (event) => {
   if (event.code === 'ArrowLeft') {
-    player.style.left = parseInt(player.style.left) - 10 + 'px';
+    playerPosition -= 10;
+    player.style.left = playerPosition + 'px';
   } else if (event.code === 'ArrowRight') {
-    player.style.left = parseInt(player.style.left) + 10 + 'px';
+    playerPosition += 10;
+    player.style.left = playerPosition + 'px';
+  }
+
+  // Check if the ball reached the goal
+  if (playerPosition >= goal.offsetLeft && playerPosition + player.offsetWidth <= goal.offsetLeft + goal.offsetWidth) {
+    // Ball reached the goal, do something
+    console.log("Ball reached the goal!");
   }
 });
+
+interactButton.addEventListener('click', startGame);
