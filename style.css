@@ -24,3 +24,10 @@
   border-radius: 5px;
   cursor: pointer;
 }
+body {
+background-color: #f2f2f2;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
