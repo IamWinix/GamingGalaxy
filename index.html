@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LeapersLegends</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Game Picker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Welcome To Leapers Legends</h1>
-  
-  <div id="maze">
-    <!-- Maze cells here -->
-  </div>
+    <h1>Welcome to the Game Picker!</h1>
+    <p>Select a game from the dropdown menu and click "Play" to start.</p>
 
-  <a href="game.html" id="interact-button">Interact</a>
-  <input type="range" id="sound-range" min="0" max="1" step="0.1" value="1">
-  <input type="range" id="music-range" min="0" max="1" step="0.1" value="1">
+    <select id="gameSelect">
+        <option value="game1">Game 1</option>
+        <option value="game2">Game 2</option>
+        <option value="game3">Game 3</option>
+    </select>
 
-  <audio id="background-music" src="background_music.mp3" loop></audio>
+    <button id="playButton">Play</button>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
