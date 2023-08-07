@@ -80,3 +80,47 @@ ball.addEventListener('mousedown', (event) => {
 });
 
 interactButton.addEventListener('click', startGame);
+
+// Get canvas element and context
+const canvas = document.getElementById("gameCanvas");
+const context = canvas.getContext("2d");
+
+// Load images
+const mansionImage = new Image();
+mansionImage.src = "scary_mansion.jpg"; // Replace with your image file
+
+// Define maze blocks
+const wallColor = "#000000"; // Color for walls
+const blockWidth = 40;
+const blockHeight = 40;
+
+// Define maze layout
+const maze = [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+];
+
+// Draw maze and mansion background
+function draw() {
+    // Clear canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw mansion background
+    context.drawImage(mansionImage, 0, 0, canvas.width, canvas.height);
+
+    // Draw maze blocks
+    for (let row = 0; row < maze.length; row++) {
+        for (let col = 0; col < maze[row].length; col++) {
+            if (maze[row][col] === 1) {
+                context.fillStyle = wallColor;
+                context.fillRect(col * blockWidth, row * blockHeight, blockWidth, blockHeight);
+            }
+        }
+    }
+}
+
+// Call draw function to start the game
+draw();
