@@ -33,6 +33,11 @@ h1 {
   background-color: green;
 }
 
+.ball {
+  background-color: red;
+  grid-column: 1;
+}
+
 button, input[type="range"] {
   margin: 10px;
 }
