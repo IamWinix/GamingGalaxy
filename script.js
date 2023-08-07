@@ -1,6 +1,8 @@
 var player = document.getElementById("player");
 var playerX = 0;
 var playerY = 0;
+function interact() {
+  alert("You interacted with the game!");
 
 document.addEventListener("keydown", function(event) {
   if (event.code === "ArrowUp") {
