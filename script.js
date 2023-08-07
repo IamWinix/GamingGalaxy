@@ -1,4 +1,5 @@
 const player = document.getElementById('player');
+const ball = document.getElementById('ball');
 const goal = document.getElementById('goal');
 const interactButton = document.getElementById('interact-button');
 const backgroundMusic = document.getElementById('background-music');
@@ -8,6 +9,7 @@ let playerPosition = 0;
 function startGame() {
   interactButton.style.display = 'none';
   player.style.display = 'block';
+  ball.style.display = 'block';
   backgroundMusic.play();
 
   loadStage(1);
@@ -50,6 +52,31 @@ document.addEventListener('keydown', (event) => {
     // Ball reached the goal, do something
     console.log("Ball reached the goal!");
   }
+});
+
+ball.addEventListener('mousedown', (event) => {
+  const initialX = event.clientX;
+  const initialY = event.clientY;
+
+  const ballRect = ball.getBoundingClientRect();
+  const ballOffsetX = initialX - ballRect.left;
+  const ballOffsetY = initialY - ballRect.top;
+
+  function moveBall(event) {
+    const newX = event.clientX - ballOffsetX;
+    const newY = event.clientY - ballOffsetY;
+
+    ball.style.left = newX + 'px';
+    ball.style.top = newY + 'px';
+  }
+
+  function stopMovingBall() {
+    document.removeEventListener('mousemove', moveBall);
+    document.removeEventListener('mouseup', stopMovingBall);
+  }
+
+  document.addEventListener('mousemove', moveBall);
+  document.addEventListener('mouseup', stopMovingBall);
 });
 
 interactButton.addEventListener('click', startGame);
