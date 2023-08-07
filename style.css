@@ -4,19 +4,34 @@ body {
 }
 
 #player {
-  width: 50px;
-  height: 50px;
-  background-color: blue;
+  width: 20px;
+  height: 100px;
+  background-color: black;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.platform {
-  width: 200px;
-  height: 20px;
-  background-color: green;
+#player:before,
+#player:after {
+  content: "";
   position: absolute;
-  bottom: 100px;
-  left: 150px;
+  background-color: black;
+}
+
+#player:before {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  bottom: 100%;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+#player:after {
+  width: 60px;
+  height: 20px;
+  bottom: 40px;
+  left: 0;
 }
