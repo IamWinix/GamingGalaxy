@@ -14,3 +14,12 @@ body {
 #game-canvas {
   border: 1px solid #ccc;
 }
+
+.ball {
+  position: absolute;
+  background-color: #ff0000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease-in-out;
+}
