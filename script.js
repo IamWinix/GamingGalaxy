@@ -1,32 +1,40 @@
 // Get the ball, goal, interact button, audio elements, and settings elements
-const ball = document.getElementById('ball');
-const goal = document.getElementById('goal');
+const ball = document.querySelector('.ball');
+const goal = document.querySelector('.goal');
 const interactButton = document.getElementById('interact-button');
 const backgroundMusic = document.getElementById('background-music');
 const soundRange = document.getElementById('sound-range');
 const musicRange = document.getElementById('music-range');
 
 // Set the initial position of the ball and goal
-let ballLeft = 0;
-let goalLeft = 200;
+let ballPosition = 0;
 
 // Move the ball left
 function moveLeft() {
-  ballLeft -= 50;
-  ball.style.left = ballLeft + 'px';
-  checkCollision();
+  if (ballPosition > 0) {
+    ballPosition--;
+    updateBallPosition();
+    checkCollision();
+  }
 }
 
 // Move the ball right
 function moveRight() {
-  ballLeft += 50;
-  ball.style.left = ballLeft + 'px';
-  checkCollision();
+  if (ballPosition < 3) {
+    ballPosition++;
+    updateBallPosition();
+    checkCollision();
+  }
+}
+
+// Update the ball's position based on the ballPosition variable
+function updateBallPosition() {
+  ball.style.gridColumn = ballPosition + 1;
 }
 
 // Check for collision between ball and goal
 function checkCollision() {
-  if (ballLeft === goalLeft) {
+  if (ballPosition === 3 && ball.style.gridRow === goal.style.gridRow) {
     alert('Congratulations! You reached the goal!');
   }
 }
