@@ -1,22 +1,18 @@
-var player = document.getElementById("player");
-var playerX = 0;
-var playerY = 0;
-function interact() {
-  alert("You interacted with the game!");
+javascript
+const player = document.getElementById('player');
+const interactButton = document.getElementById('interact-button');
+const backgroundMusic = document.getElementById('background-music');
 
-document.addEventListener("keydown", function(event) {
-  if (event.code === "ArrowUp") {
-    playerY -= 10;
-  }
-  if (event.code === "ArrowDown") {
-    playerY += 10;
-  }
-  if (event.code === "ArrowLeft") {
-    playerX -= 10;
-  }
-  if (event.code === "ArrowRight") {
-    playerX += 10;
-  }
-  
-  player.style.transform = `translate(${playerX}px, ${playerY}px)`;
+interactButton.addEventListener('click', () => {
+  alert('You interacted with the game!');
 });
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'ArrowLeft') {
+    player.style.left = parseInt(player.style.left) - 10 + 'px';
+  } else if (event.code === 'ArrowRight') {
+    player.style.left = parseInt(player.style.left) + 10 + 'px';
+  }
+});
+
+backgroundMusic.play();
