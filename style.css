@@ -5,6 +5,12 @@ body {
     text-align: center;
 }
 
+.header img {
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
 h1 {
     margin-top: 0;
 }
