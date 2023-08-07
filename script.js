@@ -1,37 +1,28 @@
-// Get the player and goal elements
-const player = document.getElementById('player');
+// Get the ball, goal, interact button, and audio elements
+const ball = document.getElementById('ball');
 const goal = document.getElementById('goal');
+const interactButton = document.getElementById('interact-button');
+const backgroundMusic = document.getElementById('background-music');
 
-// Set the initial position of the player and goal
-let playerLeft = 0;
+// Set the initial position of the ball and goal
+let ballLeft = 0;
 let goalLeft = 200;
 
-// Move the player left
+// Move the ball left
 function moveLeft() {
-  playerLeft -= 50;
-  player.style.left = playerLeft + 'px';
+  ballLeft -= 50;
+  ball.style.left = ballLeft + 'px';
   checkCollision();
 }
 
-// Move the player right
+// Move the ball right
 function moveRight() {
-  playerLeft += 50;
-  player.style.left = playerLeft + 'px';
+  ballLeft += 50;
+  ball.style.left = ballLeft + 'px';
   checkCollision();
 }
 
-// Check for collision between player and goal
+// Check for collision between ball and goal
 function checkCollision() {
-  if (playerLeft === goalLeft) {
-    alert('Congratulations! You reached the goal!');
-  }
-}
-
-// Event listeners for arrow key presses
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'ArrowLeft') {
-    moveLeft();
-  } else if (event.key === 'ArrowRight') {
-    moveRight();
-  }
-});
+  if (ballLeft === goalLeft) {
+    alert('Congratulations!});
