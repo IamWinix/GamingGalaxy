@@ -31,4 +31,13 @@ background-color: #f2f2f2;
   cursor: pointer;
 }
 
+#ball {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+}
 
