@@ -1,3 +1,27 @@
+function startGame() {
+  // Set the game duration in seconds
+  var duration = 60;
+  var timerDisplay = document.querySelector('.timer');
+  var startTime = Date.now();
+  var endTime = startTime + duration * 1000;
+
+  // Update the timer every second
+  var intervalId = setInterval(function() {
+    var remainingTime = Math.max(0, endTime - Date.now());
+    var minutes = Math.floor(remainingTime / 60000);
+    var seconds = Math.floor((remainingTime % 60000) / 1000);
+    var timeString = ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+    timerDisplay.textContent = timeString;
+
+    // Game over when the timer reaches 0
+    if (remainingTime === 0) {
+      clearInterval(intervalId);
+      alert('Game over!');
+    }
+  }, 1000);
+}
+
+
 function rand(max) {
     return Math.floor(Math.random() * max);
   }
@@ -583,27 +607,3 @@ function rand(max) {
       document.getElementById("mazeContainer").style.opacity = "100";
     }
   }
-// JavaScript code
-function startGame() {
-  // Set the game duration in seconds
-  var duration = 60;
-  var timerDisplay = document.querySelector('.timer');
-  var startTime = Date.now();
-  var endTime = startTime + duration * 1000;
-
-  // Update the timer every second
-  var intervalId = setInterval(function() {
-    var remainingTime = Math.max(0, endTime - Date.now());
-    var minutes = Math.floor(remainingTime / 60000);
-    var seconds = Math.floor((remainingTime % 60000) / 1000);
-    var timeString = ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
-    timerDisplay.textContent = timeString;
-
-    // Game over when the timer reaches 0
-    if (remainingTime === 0) {
-      clearInterval(intervalId);
-      alert('Game over!');
-    }
-  }, 1000);
-}
-
