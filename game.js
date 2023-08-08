@@ -1,12 +1,4 @@
 
-    // Game over when the timer reaches 0
-    if (remainingTime === 0) {
-      clearInterval(intervalId);
-      alert('Game over!');
-    }
-  }, 1000);
-}
-
 
 function rand(max) {
     return Math.floor(Math.random() * max);
