@@ -6,7 +6,7 @@ function playGame() {
     if (selectedGame === "game1") {
         window.location.href = "game.html";
     } else if (selectedGame === "game2") {
-        window.location.href = "game2.html";
+        window.location.href = "snake.html";
     } else if (selectedGame === "game3") {
         window.location.href = "game3.html";
     }
