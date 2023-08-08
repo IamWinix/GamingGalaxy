@@ -125,8 +125,14 @@ input:focus, select:focus {
 }
  
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 100px) {
 	input, select {
-	    width: 120px;
+	    width: 100px;
 	}
+
+
+.timer {
+  font-size: 24px;
+  margin-top: 20px;
 }
+
