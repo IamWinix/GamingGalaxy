@@ -115,21 +115,30 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
+    function renderApologies for the cutoff in the previous response. Here's the remaining part of the JavaScript code:
+
+```javascript
     function render() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+        
+        // Render snake
         snake.forEach(segment => {
             ctx.fillStyle = '#FFF';
             ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
         });
 
-        ctx.fillStyle = '#FF0000';
+        // Render food
+        ctx.fillStyle = '#F00';
         ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
     }
 
     function resetGame() {
         snake = [{ x: 10, y: 10 }];
         direction = { x: 0, y: 0 };
+        clearInterval(intervalId);
+        document.removeEventListener('keydown', changeDirection);
+        canvas.removeEventListener('touchstart', handleTouchStart);
+        canvas.removeEventListener('touchmove', handleTouchMove);
         startGame();
     }
 
