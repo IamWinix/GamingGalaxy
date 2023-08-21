@@ -8,7 +8,7 @@ function playGame() {
     } else if (selectedGame === "game2") {
         window.location.href = "snake.html";
     } else if (selectedGame === "game3") {
-        window.location.href = "game3.html";
+        window.location.href = "1v1.html";
     }
 }
 
