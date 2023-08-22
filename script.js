@@ -9,6 +9,8 @@ function playGame() {
         window.location.href = "snake.html";
     } else if (selectedGame === "game3") {
         window.location.href = "1v1.html";
+        } else if (selectedGame === "game3") {
+        window.location.href = "Shadow_Client_en_US.html";
     }
 }
 
