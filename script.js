@@ -4,7 +4,7 @@ function playGame() {
 
     // Redirect the user to the selected game's page
     if (selectedGame === "game1") {
-        window.location.href = "game.html"; {
+        window.location.href = "DragonX_V2_International.html"; {
         window.location.href = "1v1.html";
         } else if (selectedGame === "game4") {
         window.location.href = "Shadow_Client_en_US.html";
