@@ -28,17 +28,17 @@ main {
   text-align: center;
 }
 
-.play-button button {
+.play-button a {
+  display: inline-block;
   padding: 20px 40px;
   font-size: 24px;
   background-color: #4CAF50;
   color: #fff;
-  border: none;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.play-button button:hover {
+.play-button a:hover {
   background-color: #45a049;
 }
