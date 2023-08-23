@@ -5,15 +5,24 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <header>
-      <h1>Welcome to Gaming Galaxy!</h1>
-    </header>
-    <main>
-      <div class="play-button">
-        <button id="playButton">Not In History</button>
-         <a href="unblocker.html?url=https://www.gaminggalaxy.games/unblockers.html" target="_blank" id="playButton">In History</a>
+    <div class="container">
+      <header>
+        <h1>Welcome to My Home Page</h1>
+      </header>
+      <main>
+        <div class="content">
+          <h2>About US</h2>
+          <p>Welcome to Gaming Galaxy!We are a group of coders who make proxies and game for school chromebooks!</p>
+        </div>
+        <div class="tab">
+          <button onclick="navigateTo('unblock.html')">Proxies</button>
+          <button onclick="navigateTo('games.html')">Games</button>
+        </div>
+      </main>
+      <div class="scroll-down">
+        <a href="#content"><span></span>Scroll Down</a>
       </div>
-    </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
