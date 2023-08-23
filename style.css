@@ -77,3 +77,24 @@ a span {
   transform: rotate(45deg);
   margin-bottom: 5px;
 }
+
+.image-gallery {
+  margin-top: 50px;
+}
+
+.image-gallery h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.images img {
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+}
