@@ -1,33 +1,17 @@
-var urlObj = new window.URL(window.location.href);
-var aboutBlankURL = "about:blank";
-var directURL = "unblocker.html";
-var url;
+document.addEventListener("DOMContentLoaded", function() {
+  var urlObj = new URL(window.location.href);
+  var directURL = "https://www.gaminggalaxy.games/unblocker.html";
+  var url = directURL;
 
-if (urlObj.searchParams.has("url")) {
-  url = urlObj.searchParams.get("url");
-} else {
-  url = directURL;
-}
+  if (urlObj.searchParams.has("url")) {
+    url = urlObj.searchParams.get("url");
+  }
 
-if (url) {
-  var win;
+  var playButton = document.getElementById("playButton");
 
-  document.getElementById('playButton').onclick = function() {
-    if (win) {
-      win.focus();
-    } else {
-      win = window.open();
-      win.document.body.style.margin = '0';
-      win.document.body.style.height = '100vh';
-      var iframe = win.document.createElement('iframe');
-      iframe.style.border = 'none';
-      iframe.style.width = '100%';
-      iframe.style.height = '100%';
-      iframe.style.margin = '0';
-      iframe.src = url;
-      win.document.body.appendChild(iframe);
-    }
-    document.getElementById('playButton').style.backgroundColor = '#808080';
-    document.getElementById('playButton').innerHTML = 'Playing';
-  };
-}
+  playButton.addEventListener("click", function() {
+    window.open(url, "_blank");
+    playButton.style.backgroundColor = "#808080";
+    playButton.innerHTML = "Playing";
+  });
+});
