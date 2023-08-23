@@ -1,17 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var urlObj = new URL(window.location.href);
-  var directURL = "https://www.gaminggalaxy.games/unblocker.html";
-  var url = directURL;
+function navigateTo(url) {
+  window.location.href = url;
+}
 
-  if (urlObj.searchParams.has("url")) {
-    url = urlObj.searchParams.get("url");
+window.addEventListener("scroll", function() {
+  var scrollDown = document.querySelector(".scroll-down");
+  if (window.scrollY > 0) {
+    scrollDown.style.display = "none";
+  } else {
+    scrollDown.style.display = "block";
   }
-
-  var playButton = document.getElementById("playButton");
-
-  playButton.addEventListener("click", function() {
-    window.open(url, "_blank");
-    playButton.style.backgroundColor = "#808080";
-    playButton.innerHTML = "Playing";
-  });
 });
