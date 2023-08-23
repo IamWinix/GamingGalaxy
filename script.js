@@ -2,26 +2,6 @@ function navigateTo(url) {
   window.location.href = url;
 }
 
-function debounce(func, delay) {
-  let timer;
-  return function() {
-    clearTimeout(timer);
-    timer = setTimeout(func, delay);
-  };
-}
-
-window.addEventListener(
-  "scroll",
-  debounce(function() {
-    var scrollDown = document.querySelector(".scroll-down");
-    if (window.scrollY > 0) {
-      scrollDown.style.display = "none";
-    } else {
-      scrollDown.style.display = "block";
-    }
-  }, 200) // Adjust the delay (in milliseconds) as needed
-);
-
 document.addEventListener("DOMContentLoaded", function() {
   const images = document.querySelectorAll(".images img");
 
@@ -45,9 +25,15 @@ function openLightbox(src, alt) {
 
   const closeButton = document.querySelector(".close-button");
   closeButton.addEventListener("click", closeLightbox);
+
+  // Disable scrolling
+  document.body.style.overflow = "hidden";
 }
 
 function closeLightbox() {
   const lightbox = document.querySelector("#lightbox");
   document.body.removeChild(lightbox);
+
+  // Enable scrolling
+  document.body.style.overflow = "auto";
 }
