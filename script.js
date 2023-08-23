@@ -14,6 +14,9 @@ function playGame() {
   } else if (selectedGame === "game5") {
     window.location.href = "1v1.html";
   }
+  } else if (selectedGame === "game6") {
+    window.location.href = "Run.html";
+  }
 }
 
 var playButton = document.getElementById("playButton");
