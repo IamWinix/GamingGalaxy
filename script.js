@@ -1,6 +1,6 @@
 var urlObj = new window.URL(window.location.href);
 var aboutBlankURL = "about:blank";
-var directURL = "https://www.gaminggalaxy.games/unblocker.html";
+var directURL = "unblocker.html";
 var url;
 
 if (urlObj.searchParams.has("url")) {
