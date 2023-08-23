@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Homepage</title>
+</head>
+<body>
+    <h1>Welcome to Your Custom Homepage</h1>
+    <p>Do you want to save this website in your history?</p>
+    <form id="saveForm">
+        <label for="saveChoice">Yes</label>
+        <input type="radio" id="saveChoice" name="save" value="yes">
+        <label for="saveChoice">No</label>
+        <input type="radio" id="saveChoice" name="save" value="no">
+        <br>
+        <input type="submit" value="Continue">
+    </form>
+
+    <!-- Add an iframe to display a website -->
+    <iframe id="websiteFrame" style="display:none;"></iframe>
+
+    <script>
+        document.getElementById('saveForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const saveChoice = document.querySelector('input[name="save"]:checked').value;
+
+            if (saveChoice === 'yes') {
+                // Display the desired website in the iframe
+                const websiteFrame = document.getElementById('websiteFrame');
+                websiteFrame.style.display = 'block';
+                websiteFrame.src = 'https://example.com'; // Change this URL
+            } else {
+                // Redirect to about:blank or another URL
+                window.location.href = 'about:blank'; // Change this URL
+            }
+        });
+    </script>
+</body>
+</html>
